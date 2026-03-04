@@ -1,0 +1,276 @@
+
+        /* ----- PRIMARY BACKGROUND COLOR #071728 (deep navy) ----- */
+        body {
+            /* background-color: #071728;      */
+            font-family: 'Cormorant Garamond', 'Times New Roman', serif;
+            line-height: 1.5;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+        
+
+        /* main profile card – light background but readable on dark body */
+        .ceo-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2.5rem;
+            backdrop-filter: blur(2px);
+            padding: 1rem;
+            box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.7);
+            /* border: 1px solid #3a5a70; */
+            margin-bottom: 2rem;
+            border-radius: 0;               /* keep sharp edges for formality */
+        }
+
+        .ceo-image {
+            flex: 1 1 280px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .image-wrapper {
+            max-width: 300px;
+            background: #d9cfc2;
+            padding: 0.5rem;
+            box-shadow: 12px 12px 0 #0f2a3b;   /* dark shadow using primary variant */
+            border: 1px solid #8f7f6e;
+        }
+
+        .image-wrapper img {
+            width: 100%;
+            height: auto;
+            display: block;
+            filter: grayscale(20%);
+            transition: filter 0.4s;
+        }
+
+        .image-wrapper:hover img {
+            filter: grayscale(0%);
+        }
+
+        .ceo-details {
+            flex: 2 1 400px;
+            width: 100%;
+        }
+
+        .ceo-name {
+            font-size: 2rem;
+            font-weight: 700;
+            line-height: 1.1;
+            color: #0a2538;                /* dark navy, matches body but for contrast on light card */
+            margin-bottom: 0.2rem;
+        }
+
+        .ceo-title {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: #9e6b4b;
+            margin-bottom: 0.8rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem 1rem;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .sub {
+	                color: #fffc;
+	                font-size: 1.1rem;
+                }
+
+       
+        .badge {
+            background: #e7ddd2;
+            padding: 0.2rem 0.8rem;
+            font-size: 0.9rem;
+            font-weight: 400;
+            color: #0e2f41;
+            font-family: 'Inter', sans-serif;
+            text-transform: uppercase;
+        }
+
+        .ceo-bio {
+            font-size: 1.25rem;
+            color: #183544;
+            margin: 1.5rem 0;
+            border-left: 3px solid #9e6b4b;
+            padding-left: 1.8rem;
+            background: #f6f0e9;
+            padding: 1rem 1.8rem;
+            font-weight: 500;
+        }
+
+        .ceo-contact {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem 2rem;
+            margin: 1.5rem 0 0.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            /* font-size: 1.1rem; */
+            color: white;
+            text-decoration: none;
+            background:#071728;
+            padding: 0.5rem 1rem;
+            font-family: 'Inter', sans-serif;
+            transition: 0.2s;
+        }
+
+       
+
+        .contact-item i {
+            color: #9e6b4b;
+        }
+
+        .contact-item:hover {
+            background: #d4c4b6;
+            border-color: #9e6b4b;
+            transform: translate(-2px, -2px);
+            box-shadow: 4px 4px 0 #0d3347;
+        }
+
+        .credential-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem 1.5rem;
+            margin: 1.8rem 0 0.2rem;
+            border-top: 1px dashed #b7a99a;
+            padding-top: 1.5rem;
+        }
+
+        .chip {
+            background: #d3cbbc;
+            padding: 0.3rem 1.2rem;
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+            color: #071728;                /* matches body background for consistency */
+            font-weight: 500;
+        }
+
+        /* ----- write-up sections (light cards on dark background) ----- */
+        .writeup-section {
+            margin: 3.5rem 0;
+        }
+
+        .section-card {
+            background: #102441;  
+            padding: 2.2rem 2.5rem;
+            margin-bottom: 2rem;
+            border-left: 8px solid #c89f7b;  /* warm accent */
+            border-bottom: 1px solid #456477;
+            box-shadow: 0 8px 22px -8px rgba(0,0,0,0.6);
+        }
+
+        .section-card h2 {
+            /* font-size: 2rem; */
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1.5rem;
+            font-family: 'Cormorant Garamond', serif;
+            border-bottom: 1px dotted #8f9fb0;
+            padding-bottom: 0.5rem;
+        }
+
+        .section-card h3 {
+            /* font-size: 1.6rem; */
+            font-weight: 600;
+            color: #0d3148;
+            margin: 1.5rem 0 0.8rem;
+        }
+
+        .section-card p {
+            font-size: 1.2rem;
+            line-height: 1.7;
+            margin-bottom: 1.2rem;
+             color: #eeebeb;         
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .section-card ul {
+            margin: 1rem 0 1rem 2rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            color: #1f4057;
+        }
+
+        .section-card li {
+            margin-bottom: 0.3rem;
+        }
+
+        .inset-quote {
+            background: #122e40;              /* darker blue, blends with body */
+            padding: 1.5rem 2rem;
+            font-style: italic;
+            border-left: 4px solid #c89f7b;
+            margin: 1.5rem 0;
+            font-size: 1.25rem;
+            color: white;
+        }
+
+        .membership-badge {
+            display: inline-block;
+            background: #3d5e78;
+            color: #f0eae3;
+            padding: 0.2rem 1rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+            border: 1px solid #7f9bb5;
+        }
+
+        /* footer – light text */
+        .footer {
+            margin-top: 4rem;
+            border-top: 1px solid #1f445b;
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            color: #b0c4d9;
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            color: #cbb59e;
+            background: #102c3d;
+            width: 40px;
+            height: 40px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: 0.2s;
+            text-decoration: none;
+            border: 1px solid #3b6077;
+        }
+
+        .social-links a:hover {
+            background: #c89f7b;
+            color: #071728;
+            border-color: #c89f7b;
+        }
+
+        @media (max-width: 700px) {
+            .ceo-name { font-size: 1.5rem; }
+            .section-card { padding: 1.5rem; }
+        }
+ @media (max-width: 400px) {
+           .ceo-email{
+            font-size:14px
+        }
+        }
+        

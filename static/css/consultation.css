@@ -1,0 +1,112 @@
+ 
+        
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+            font-weight: bold;
+        }
+
+    .error{
+        color: red;
+        font-size: 0.9rem;
+    }
+    .attention{
+        /* width: 70%; */
+        margin: 0px auto;
+    }
+    .container .buttons{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-top: 1.2rem;
+    }
+
+    .container .delete{
+        background: red;
+    }
+
+   .buttons button{
+        padding: 8px;
+        border: 0px;
+        background: #0b1c34;
+        color: white;
+
+    }
+
+    #pending_payment{
+        background-color: #fff3cd;
+        border: 1px solid #ffeeba;
+        color: #856404;
+        padding: 15px;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+
+     #consultationForm{
+        margin-bottom: 5rem;
+
+     }
+        
+       #consultationForm input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+            font-family: Arial, sans-serif;
+        }
+        
+      #consultationForm  input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 5px rgba(102, 126, 234, 0.3);
+        }
+        
+       #consultationForm textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .price {
+            padding: 10px;
+            color: white;
+            background: #0b1c34;
+            margin-bottom: 20px;
+            text-align: center;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+        }
+       #consultationForm button {
+            width: 100%;
+            padding: 12px;
+            /* background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        
+       #consultationForm button:hover {
+            transform: translateY(-2px);
+        }
+
+        .formGroup{
+            margin-bottom: 15px;
+        }

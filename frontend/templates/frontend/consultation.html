@@ -1,0 +1,93 @@
+{% extends 'frontend/index.html' %} {% load static %} {% block styles %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/consultation.css' %}">
+{% endblock styles %} {% block title %}
+
+<title>Book a Consultation</title> {% endblock title %}
+
+{% block main %}
+    <div class="container ">
+        <div style="display: none;" id="pending_payment">
+            <div class="attention">
+            <p id="selected_service"></p>
+            <p><strong>Amount: </strong> ₦<span id="pending_amount"></span></p>
+            <p>Kindly contact us if you have any issues with your payment.</p>
+            <div class="buttons">
+                  <button id="make_payment">Make Payment</button>
+                  <button class="delete" id="delete_consultation">Delete Consultation</button>
+                  <a href="#contact"><button id="make_payment">Contact Us</button></a>
+            </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <h1>Book a Consultation</h1>
+        <p class="price">Consultation Fee: ₦<span id="amout" data="{{amount}}">{{amount}}</span></p>
+
+        <form id="consultationForm">
+            {% csrf_token %} 
+
+            <div class="formGroup">
+                <label for="name">Full Name *</label>
+                <p class="error" id="nameer"></p>
+                <input type="text" id="name" name="name" required>
+            </div>
+            
+            <div class="formGroup">
+                <label for="email">Email *</label>
+                <p class="error" id="emailer"></p>
+                <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="formGroup">
+                <label for="phone">Phone Number *</label>
+                <p class="error" id="phoneer"></p>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            
+            <div class="formGroup">
+                <label for="service">Service Type *</label>
+                <p class="error" id="serviceer"></p>
+                <select id="service" name="service" required>
+                    <option value="">Select a service</option>
+                    {% for service in services %}
+                    <option value="{{service}}">{{service}}</option>
+                    {% endfor %}
+                        
+
+                    <!-- <option value="general">General Consultation</option>
+                    <option value="technical">Technical Support</option>
+                    <option value="business">Business Coaching</option>
+                    <option value="design">Design Review</option> -->
+                </select>
+            </div>
+            
+            <div class="formGroup">
+                <label for="date">Preferred Date *</label>
+                <p class="error" id="dateer"></p>
+                <input type="date" id="date" name="date" required>
+            </div>
+            
+            <!-- <div class="formGroup">
+                <label for="time">Preferred Time *</label>
+                <p class="timeer"></p>
+                <input type="time" id="time" name="time" required>
+            </div> -->
+            
+            <div class="formGroup">
+                <label for="description">Description *</label>
+                <p class="error" id="descriptioner"></p>
+                <textarea id="description" name="description" placeholder="Tell us more about your needs..."></textarea>
+            </div>
+            <p id="public_key" style="display: none;">{{public_key}}</p>
+
+
+            <button class='process' type="submit">Book Consultation</button>
+        </form>
+    </div>
+                <!-- <button class='process' >payment</button> -->
+
+{% endblock main %}
+{% block js %} 
+ <script src="https://js.paystack.co/v2/inline.js"> </script>
+    <script src='{% static "js/consultation.js" %}'></script>
+{% endblock js %}

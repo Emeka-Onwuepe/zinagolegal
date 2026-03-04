@@ -1,0 +1,223 @@
+  
+:root {
+            --navy: #0b1c34;
+            --deep-navy: #071728;
+	        --light-navy: #102441;
+}
+
+body{
+    background-color: var(--deep-navy);
+    color: white;
+}
+h1, h2, h3, h4 {
+	
+	color: white;
+}
+        /* header */
+        .firm-header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2.2rem;
+            border-bottom: 1px solid #e2eaf2;
+            padding-bottom: 1.5rem;
+        }
+
+        .logo-area h1 {
+            /* font-size: 2.3rem; */
+            font-weight: 600;
+            letter-spacing: -0.5px;
+            /* color: #0b273f; */
+        }
+
+        .logo-area .tagline {
+            font-size: 1rem;
+            /* color: #4f647c; */
+            margin-top: 0.25rem;
+        }
+
+        .header-contact {
+            /* background: #eef3f9; */
+            padding: 0.7rem 1.8rem;
+            border-radius: 60px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            /* color: #1d3d5c; */
+            font-size: 0.95rem;
+        }
+
+        .header-contact i {
+            color: #B58B3B;
+            margin-right: 6px;
+        }
+
+        .header-contact span {
+            font-weight: 500;
+        }
+
+        /* page introduction */
+        .page-title {
+            margin: 1.5rem 0 3rem 0;
+            max-width: 80%;
+        }
+
+        .page-title h2 {
+            /* font-size: 2.8rem; */
+            font-weight: 500;
+            /* color: #0a233a; */
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+        }
+
+        .page-title h2:after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 5px;
+            background: #B58B3B;
+            margin-top: 18px;
+            border-radius: 6px;
+        }
+
+        .page-title p {
+            font-size: 1.2rem;
+            /* color: #345172; */
+            margin-top: 1.2rem;
+        }
+
+        /* ===== SERVICE SECTIONS ===== */
+        /* each practice area gets a distinct section with write-up + details */
+        .service-section {
+            margin-bottom: 4.5rem;
+            scroll-margin-top: 2rem;   /* if anchor links used */
+        }
+
+        /* section header with icon and area name */
+        .section-headers {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            margin-bottom: 1.8rem;
+        }
+
+        .section-icon {
+            font-size: 2.4rem;
+            width: 75px;
+            height: 75px;
+            background: #ecf2f9;
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #B58B3B;
+        }
+
+        .section-headers h3 {
+            /* font-size: 2.2rem; */
+            font-weight: 500;
+            /* color: #0b273f; */
+        }
+
+        /* two-column layout inside each section: left = write‑up, right = bullet list */
+        .service-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.2rem 3rem;
+            /* background: #f9fcff; */
+            border-radius: 40px;
+            padding: 2.4rem 2.8rem;
+            border: 1px solid #e2ebf5;
+            box-shadow: 0 12px 30px -15px rgba(16, 50, 84, 0.1);
+        }
+
+        .writeup p {
+            /* color: #2b4059; */
+            font-size: 1.07rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .writeup p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* .writeup strong {
+            color: #0b273f;
+        } */
+
+        .service-details h4 {
+            /* font-size: 1.3rem; */
+            font-weight: 600;
+            /* color: #1d3d5c; */
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border-bottom: 2px solid #d2e0ee;
+            padding-bottom: 0.5rem;
+        }
+
+        .service-details h4 i {
+            color: #B58B3B;
+            font-size: 1.4rem;
+        }
+
+        .service-details ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.9rem;
+        }
+
+        .service-details li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 1.05rem;
+            /* color: #1e3c5a; */
+        }
+
+        .service-details li i {
+            color: #B58B3B;
+            font-size: 1.1rem;
+            min-width: 22px;
+            margin-top: 3px;
+        }
+
+        /* optional highlight note inside writeup */
+        .insight-note {
+            /* background: #e8f0fe; */
+            padding: 1.2rem 1.6rem;
+            border-radius: 24px;
+            margin-top: 1.4rem;
+            border-left: 5px solid #B58B3B;
+        }
+
+        .insight-note i {
+            color: #B58B3B;
+            margin-right: 8px;
+        }
+
+
+        @media (max-width: 900px) {
+            .service-grid {
+                grid-template-columns: 1fr;
+                padding: 1.8rem;
+            }
+            .page-title {
+                max-width: 100%;
+            }
+            /* .section-header h3 {
+                font-size: 1.9rem;
+            } */
+          
+        }
+
+        @media (max-width: 550px) {
+            .firm-header {
+                flex-direction: column;
+                align-items: start;
+                gap: 1rem;
+            }
+        }
