@@ -60,6 +60,7 @@
             font-size: 1.7rem;
             transition: 0.2s;
             flex-shrink: 0;
+            display: none;
         }
 
         .practice-card.active .practice-icon {

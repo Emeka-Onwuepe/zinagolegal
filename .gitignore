@@ -2,3 +2,4 @@ __pycache__/
 */migrations/[0-9]*
 db*
 media/
+zingo/
