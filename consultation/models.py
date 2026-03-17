@@ -56,7 +56,7 @@ class Services(models.Model):
         """Meta definition for services."""
 
         verbose_name = 'services'
-        verbose_name_plural = 'servicess'
+        verbose_name_plural = 'services'
 
     def __str__(self):
         """Unicode representation of services."""
