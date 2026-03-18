@@ -87,9 +87,11 @@ function payWithPaystack(OrderId, Total, email) {
             then(data => {
                     // wait here
                     // loaderContainer.style.display = 'none'
+                    payment({type:'CLEAR'})
                     set_pending_payment()
                     alert('Payment complete!');
-                    payment({type:'CLEAR'})
+
+
                     // const parentNode = e.target.parentNode
                     // const paragraph = document.createElement("p")
                     // paragraph.innerHTML = "Paid"
