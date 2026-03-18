@@ -2,8 +2,35 @@ const public_key = document.getElementById("public_key").innerHTML
 const make_payment_button = document.getElementsByClassName("process")
 const csrtoken = document.getElementsByName("csrfmiddlewaretoken")[0].value
 let total = document.getElementById("amout")
-const Total = total.getAttribute("data")
+let Total = total.getAttribute("data")
 total.innerHTML = addcommas(Total)
+
+const service_amounts = document.getElementsByClassName("service_amounts")
+const service = document.getElementById('service')
+
+// <p class="price">Consultation Fee: ₦<span id="amout" data="{{amount}}">{{amount}}</span></p>
+
+const getnum = (str)=>{
+    return str.match(/\d+/g)
+}
+
+for (const span of service_amounts) {
+    // let data = addcommas(getnum(span.innerHTML)[0])
+    span.innerHTML = addcommas(span.innerHTML)
+}
+
+const onchange = (e)=>{
+    const index = e.target.selectedIndex
+    const selected = e.target[index]
+    const amount = getnum(selected.innerHTML).join('')
+    Total = amount
+    total.setAttribute('data',amount)
+    total.innerHTML = addcommas(amount)
+    // amount = parseInt(amount)
+    console.log(amount)
+}
+
+service.addEventListener('change', onchange)
 
 
 
@@ -60,9 +87,9 @@ function payWithPaystack(OrderId, Total, email) {
             then(data => {
                     // wait here
                     // loaderContainer.style.display = 'none'
+                    set_pending_payment()
                     alert('Payment complete!');
                     payment({type:'CLEAR'})
-
                     // const parentNode = e.target.parentNode
                     // const paragraph = document.createElement("p")
                     // paragraph.innerHTML = "Paid"
@@ -72,12 +99,14 @@ function payWithPaystack(OrderId, Total, email) {
                 })
                 .catch((error) => {
                     // loaderContainer.style.display = 'none'
+                    set_pending_payment()
                     alert(error)
                 });
         },
 
         onClose: function() {
             // loaderContainer.style.display = 'none'
+            set_pending_payment()
             alert('Transaction was not completed, window closed.');
 
         },
@@ -182,6 +211,8 @@ const onSubmit = (e)=>{
         forminputs.forEach((input)=>input.value = '')
         // pay with paystack
          payWithPaystack(orderId, Total, formData.email)
+        set_pending_payment()
+
     }
        )
     .catch(err=>console.log(err))
@@ -222,7 +253,9 @@ const make_pending_payment = () =>{
             payment.payment.Total, 
             payment.payment.email)
     }
-    loading({type:'LOADED'})    
+    loading({type:'LOADED'})   
+    set_pending_payment()
+ 
 }
 
 set_pending_payment()

@@ -51,12 +51,15 @@ class Services(models.Model):
 
     # TODO: Define fields here
     name = models.CharField("name", max_length=150)
+    amount = models.IntegerField(default=200_000)
 
     class Meta:
         """Meta definition for services."""
 
         verbose_name = 'services'
         verbose_name_plural = 'services'
+        ordering = ['name']
+
 
     def __str__(self):
         """Unicode representation of services."""

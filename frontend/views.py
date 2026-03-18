@@ -22,7 +22,7 @@ def servicesView(request):
 
 def consultView(request):  
     amount = Consultation_Meta.objects.first()
-    services = Services.objects.all()
+    services = Services.objects.all().order_by('name')
 
     return render(request,'frontend/consultation.html',
                   {"public_key":settings.PAYSTACT_PUBLIC_KEY,

@@ -50,7 +50,7 @@
                 <select id="service" name="service" required>
                     <option value="">Select a service</option>
                     {% for service in services %}
-                    <option value="{{service}}">{{service}}</option>
+                    <option class="service_amounts" value="{{service}}">{{service.name}} (₦{{service.amount}})</option>
                     {% endfor %}
                         
 
